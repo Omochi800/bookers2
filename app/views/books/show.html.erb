@@ -1,0 +1,18 @@
+<h1>Book detail</h1>
+<table>
+
+ <tbody>
+    <% @books.each do |book| %>
+    
+    <tr>
+    
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+    <td><%= link_to 'Edit',edit_book_path %></td>
+    <td><%= link_to 'Destroy',book_path</td>
+
+    </tr>
+    
+    <% end %>
+  </tbody>
+ </table>
