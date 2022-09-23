@@ -9,7 +9,7 @@ class Book < ApplicationRecord
       file_path = Rails.root.join('app/assets/images/no_image.jpeg')
       profile_image.attach(io:File.open(file_path),filename:'no_image.jpeg',content_type:'image/jpeg')
     end
-    profile_image.varian
+    profile_image.varian(resize_to_limit:[width,height]).processed
    end  
   
 end

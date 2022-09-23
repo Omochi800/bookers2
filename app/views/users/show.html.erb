@@ -1,21 +1,36 @@
-<h1>User info</h1>
+<h2>User info</h2>
+
+
 
 <div>
   <%= image_tag @user.get_profile_image(100,100) %>
+  <table class ="table">
+    <tbody>
+    <tr></tr>
+    <tr>
+    <th><strong>name</strong></th>
+    <th><%= @user.name %></th>
+    </tr>
+    <tr>
+    <th><strong>Introduction</strong></th>
+    <th><%= @user.introduction %></th>
+    </tr>
+    </tbody>
+  </table>
   
-  <h3><strong>name</strong>   <%= @user.name %></h3>
-  
-  <h3><strong>Introduction</strong> <%= @user.introduction %></h3>
+  <div class ="row">
   <% if@user == current_user %>
-  <p><%= link_to "User info",edit_user_path(@user) %></p>
+  <a class ="btn btn-outline-secondary btn-block edit_user_path" href="/users/edit">
+    <i class="fa-solid fa-user-gear"></i>
+  </a>  
   <% end %>
- 
+  </div>
 </div>
 
 <% @books.each do |book| %>
 <div>
   <%= link_to book_path(book.id) do %>
-  
+
   <% end %>
 
 </div>

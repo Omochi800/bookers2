@@ -1,0 +1,13 @@
+<h1>User info</h1>
+
+<div>
+  <%= image_tag user.get_profile_image(100,100) %>
+  
+  <h3><strong>name</strong>   <%= @user.name %></h3>
+  
+  <h3><strong>Introduction</strong> <%= @user.introduction %></h3>
+  <% if@user == current_user %>
+  <p><%= link_to "User info",edit_user_path(@user) %></p>
+  <% end %>
+ 
+</div>
