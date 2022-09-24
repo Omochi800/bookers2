@@ -17,12 +17,12 @@
     </tr>
     </tbody>
   </table>
-  
+
   <div class ="row">
   <% if@user == current_user %>
-  <a class ="btn btn-outline-secondary btn-block edit_user_path" href="/users/edit">
+  <a class ="btn btn-outline-secondary btn-block edit_user_path" href="/users/:id/edit(.:format)">
     <i class="fa-solid fa-user-gear"></i>
-  </a>  
+  </a>
   <% end %>
   </div>
 </div>
