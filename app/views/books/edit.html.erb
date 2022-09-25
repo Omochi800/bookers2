@@ -15,7 +15,7 @@
 <div class="form-group btn btn-success">
   <%= f.submit 'Update Book',class:'btn btn-sm btn-success' %>
  </div>
- <a class="book_id" href="/books/id">Show</a>
+  <%=link_to "Show",book_path(@book.id) %>
   |
   <a class="back" href="/books">Back</a>
 

@@ -29,33 +29,58 @@
 
 
 
-       <li>
-       <i class="fa-solid fa-house-chimney"></i><a class="nav-link text-light" href="/">Home</a>
+       <li class="nav-item">
+        <a class="nav-link text-light" href="/">
+        <i class="fa-solid fa-house-chimney"> </i>
+        Home
+        </a>
+
        </li>
 
        <li class="nav-item">
-       <i class="fa-solid fa-users"></i><a class="nav-link text-light" href="/users/id">User</a>
+        <a class="nav-link text-light" href="/users">
+       <i class="fa-solid fa-users"></i>
+        Users
+        </a>
        </li>
        <li class="nav-item">
-       <i class="fa-solid fa-book-open"></i><%= link_to 'Books',books_path %>
+        <a class="nav-link text-light" href="/books">
+       <i class="fa-solid fa-book-open"></i>
+        Books
+        </a>
        </li>
        <li class="nav-item">
-       <i class="fa-solid fa-right-to-bracket"></i> <%= link_to "Log out",destroy_user_session_path,method: :delete %>
+         <a class="nav-link text-light" href="/users/sign_out" rel ="nofollow" data-method ="delete">
+       <i class="fa-solid fa-right-to-bracket"></i>  Log out
+         </a>
+       
        </li>
     <% else %>
-       <li class ="nav-item">
-       <i class="fa-solid fa-house-chimney"></i> <%= link_to 'Home',root_path %>
+        <li class="nav-item">
+        <a class="nav-link text-light" href="/">
+        <i class="fa-solid fa-house-chimney"> </i>
+        Home
+        </a>
+
        </li>
 
        <li class="nav-item">
-       <i class="fa-solid fa-link"></i><%= link_to 'About',about_path %>
-       </li>
+       <a class="nav-link text-light" href="/homes/about">
+       <i class="fa-solid fa-link"></i>
+       About
+       </a>
 
        <li class="nav-item">
-       <i class="fa-solid fa-user-plus"></i><%= link_to "Sign up",new_user_registration_path %>
+        <a class="nav-link text-light" href="/users/sign_up">   
+       <i class="fa-solid fa-user-plus"></i>
+       Sign up
+        </a>
        </li>
        <li class="nav-item">
-       <i class="fa-solid fa-right-to-bracket"></i><%= link_to "Log in",new_user_session_path %>
+         <a class="nav-link text-light" href="/users/sign_in">
+       <i class="fa-solid fa-right-to-bracket"></i>
+       Log in
+         </a>
        </li>
     <% end %>
        </ul>
@@ -63,6 +88,9 @@
      </div>
     </nav>
     </header>
+    <main>
+      
+    </main>
     <%= yield %>
   </body>
 

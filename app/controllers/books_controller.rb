@@ -11,8 +11,11 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
     
+    
+    
+    @book = Book.new
+    @books = Book.all.order(created_at: :desc)
    
   end
 
@@ -28,15 +31,21 @@ class BooksController < ApplicationController
 
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
+  if book.user != current_user
     redirect_to book_path(book.id)
+  else
+     book.update(book_params)
+     redirect_to book_path(book.id)
   end
+  end
+  
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_path
   end
+
 
   private
 
