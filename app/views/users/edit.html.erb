@@ -3,6 +3,15 @@
 <div class ="row">   
 
 <div class ="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+  <ul>
+    <% if @user.errors.any? %>
+    <%= @user.errors.count %> errors prohibited this user from being updatd:
+ <%= @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+ <% end %>
  <h1>User info</h1>
 <%= form_with model:@user do |f| %>
 <label for="inputName">Name</label>

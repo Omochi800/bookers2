@@ -1,6 +1,19 @@
+
 <h1>Editing Book</h1>
 
-<%= form_with model:@book,url:book_path(@book.id),method: :patch do |f| %>
+ <%= form_with model:@book,url:book_path(@book),method: :patch,local:true do |f| %>
+  <ul>
+ <% if @book.errors.any? %>
+    <%= @book.errors.count %> errors prohibited this book from being updatd:
+ <%= @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+ <% end %>
+  </ul>
+ <% end %>
+
+
+
+
 
 <div class="form-group">
  <label for="book_title">Title</label>
@@ -19,4 +32,4 @@
   |
   <a class="back" href="/books">Back</a>
 
-<% end %>
+ <% end %>
